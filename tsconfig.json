@@ -10,8 +10,12 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "target": "ESNext",
     "jsx": "preserve",
     "incremental": true,
+    "types": [
+      "bun-types" // add Bun global
+    ],
     "plugins": [
       {
         "name": "next"
