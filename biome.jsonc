@@ -1,0 +1,24 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.6.1/schema.json",
+    "vcs": { "useIgnoreFile": true, "defaultBranch": "main" },
+    "organizeImports": {
+        "enabled": true
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true
+        }
+    },
+    "formatter": {
+        "indentWidth": 4,
+        "indentStyle": "space",
+        "enabled": true
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single",
+            "trailingComma": "es5"
+        }
+    }
+}
