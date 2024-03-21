@@ -1,9 +1,9 @@
+import type { SlashCommandBuilder } from '@discordjs/builders';
 import {
     type APIInteraction,
     type APIInteractionResponse,
     InteractionResponseType,
-    type SlashCommandBuilder,
-} from 'discord.js';
+} from 'discord-api-types/v10';
 import type { Context } from 'hono';
 export type SlashCommand = {
     data: SlashCommandBuilder;

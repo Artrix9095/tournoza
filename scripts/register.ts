@@ -1,16 +1,14 @@
 import commands from '@/commands';
-import { config } from '@/config.cjs';
-import { REST, Routes } from 'discord.js';
+import { env } from '@/config.cjs';
+import { Routes } from 'discord-api-types/v10';
+import { REST } from 'discord.js';
 
 const json = commands.map((c) => c.data.toJSON());
 
-const rest = new REST({}).setToken(config.BOT_TOKEN);
+const rest = new REST({}).setToken(env.BOT_TOKEN);
 
 await rest.put(
-    Routes.applicationGuildCommands(
-        config.BOT_APPLICATION_ID,
-        config.SERVER_ID
-    ),
+    Routes.applicationGuildCommands(env.BOT_APPLICATION_ID, env.SERVER_ID),
     {
         body: json,
     }

@@ -27,6 +27,11 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
+
+
+# Google API secrets
+secrets.json
 
 # vercel
 .vercel
