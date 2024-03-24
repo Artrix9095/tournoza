@@ -14,4 +14,4 @@ await rest.put(
     }
 );
 
-console.log(`💪 Posted ${json.length} public commands`);
+console.log(`💪 Posted ${json.length} commands`);

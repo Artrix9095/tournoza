@@ -5,6 +5,7 @@ import {
     InteractionResponseType,
 } from 'discord-api-types/v10';
 import type { Context } from 'hono';
+import info from './info';
 export type SlashCommand = {
     data: SlashCommandBuilder;
     run: (
@@ -29,4 +30,4 @@ export type SlashCommand = {
 //     };
 // };
 
-export default [] as SlashCommand[];
+export default [info] as SlashCommand[];
