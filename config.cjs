@@ -22,8 +22,8 @@ const schema = z.object({
     version: z.string(),
     BOT_TOKEN: z.string().min(1, '🌟 You forgot your token silly.'),
     SERVER_ID: z
-        .string()
-        .min(1, "🌟 You didn't set your tournament server's id!"),
+        .string(),
+        // .min(1, "🌟 You didn't set your tournament server's id!"),
     MATCH_RESULTS_CHANNEL_ID: z.string(),
     CONFIG_SHEET_ID: z.string().min(1, "🌟 Don't forget your database url!"),
     OSU_API_KEY: z.string().min(1, '🌟 You need an osu! API key!'),
