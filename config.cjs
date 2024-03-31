@@ -60,15 +60,30 @@ try {
     const botSheet = new GoogleSpreadsheet(env.CONFIG_SHEET_ID, jwt);
     const rest = new REST().setToken(env.BOT_TOKEN);
     const discord = new API(rest);
+    /**
+     * @type {'Bun' | 'Nodejs' | 'Serverless'}
+     */
+    const runtime =
+        typeof Bun !== 'undefined'
+            ? 'Bun'
+            : process.env.VERCEL
+              ? 'Serverless'
+              : 'Nodejs';
+
+    const runtimeVersion = runtime === 'Bun' ? Bun.version : process.version;
 
     module.exports = {
         env,
+        system: { version: runtimeVersion, runtime },
         configSchema: schema,
         googleCreds,
         jwt,
         botSheet,
         rest,
         discord,
+        /**
+         * A bunch of pre-made embed components
+         */
         embeds: {
             /**
              * @type {(int: import('discord-api-types/v10').APIInteraction) => import('@discordjs/builders').EmbedFooterOptions}
@@ -80,6 +95,7 @@ try {
                     (user || member.user).avatar
                 ),
             }),
+            
         },
     };
 } catch (err) {
